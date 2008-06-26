@@ -1,0 +1,13 @@
+rsql
+===========
+ 
+Command-line access to ODBC datasources.
+ 
+ 
+Example
+=======
+ 
+$ rsql mydsn -u user -p password
+
+ 
+Copyright (c) 2008 unwwwired.net, released under the MIT license
