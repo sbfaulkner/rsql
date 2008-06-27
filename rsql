@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 #
-# RSQL Copyright © 2007 unwwwired.net
+# RSQL Copyright © 2007-2008 unwwwired.net
 # Created by: S. Brent Faulkner (brentf@unwwwired.net) 2007-08-29
 #
 require 'odbc'
@@ -99,6 +99,7 @@ module ODBC
         puts displayed_columns.collect { |c| c.alias.inspect }.join(",")
         # output each row
         resultset.each do |r|
+          # TODO: use FasterCSV to emit the data, since this does escape the text, but not in a manner that can be consumed by FasterCSV
           puts displayed_columns.collect { |c| r[c.index].to_s.inspect }.join(",")
         end unless resultset.nil?
       end
