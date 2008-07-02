@@ -7,7 +7,13 @@ Command-line access to ODBC datasources.
 Installation
 ============
 
-gem install --remote --source http://gems.github.com sbfaulkner-rsql
+Run the following if you haven't already:
+
+    $ gem sources -a http://gems.github.com
+  
+Install the gem(s):
+
+    $ sudo gem install sbfaulkner-rsql
 
 Example
 =======
