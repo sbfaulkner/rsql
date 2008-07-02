@@ -7,8 +7,7 @@ Command-line access to ODBC datasources.
 Installation
 ============
 
-gem install --source http://gems.github.com sbfaulkner-rsql
-
+gem install --remote --source http://gems.github.com sbfaulkner-rsql
 
 Example
 =======
