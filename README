@@ -13,7 +13,7 @@ Run the following if you haven't already:
   
 Install the gem(s):
 
-    $ sudo gem install sbfaulkner-rsql
+    $ sudo gem install -r sbfaulkner-rsql
 
 Example
 =======
