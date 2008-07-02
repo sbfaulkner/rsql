@@ -1,13 +1,20 @@
 rsql
-===========
- 
+====
+
 Command-line access to ODBC datasources.
- 
- 
+
+
+Installation
+============
+
+gem install --source http://gems.github.com sbfaulkner-rsql
+
+
 Example
 =======
- 
-$ rsql mydsn -u user -p password
 
- 
+    $ rsql mydsn -u user -p password
+
+    $ rsql mydsn -u user -p password -e 'select * from table'
+
 Copyright (c) 2008 unwwwired.net, released under the MIT license
