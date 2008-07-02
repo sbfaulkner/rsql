@@ -5,7 +5,6 @@ require 'rake/gempackagetask'
 load File.join(File.dirname(__FILE__),'rsql.gemspec')
 
 Rake::GemPackageTask.new(SPEC) do |pkg|
-  pkg.need_tar = true
 end
 
 task :default => :package
