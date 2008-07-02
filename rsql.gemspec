@@ -1,5 +1,3 @@
-require 'rubygems'
-
 SPEC = Gem::Specification.new do |s| 
   # identify the gem
   s.name = "rsql" 
@@ -11,7 +9,7 @@ SPEC = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY 
   # description of gem
   s.summary = "A ruby implementation of an interactive SQL command-line for ODBC" 
-  s.files = Dir.glob("{bin,docs,lib,test}/**/*").delete_if { |item| item.include?("CVS") || item.include?("rdoc") }
+  s.files = %w(bin/rsql lib/rsql/odbc.rb lib/rsql/rsql.rb MIT-LICENSE Rakefile README rsql.gemspec)
   s.require_path = "lib" 
   # s.autorequire = "rsql" 
   # s.test_file = "test/rsql.rb" 
