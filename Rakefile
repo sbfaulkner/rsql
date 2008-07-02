@@ -13,7 +13,6 @@ spec = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY 
   # description of gem
   s.summary = "A ruby implementation of an interactive SQL command-line for ODBC" 
-  candidates = Dir.glob("{bin,docs,lib,test}/**/*") 
   s.files = FileList["{bin,tests,lib,docs}/**/*"].exclude("rdoc").to_a
   s.require_path = "lib" 
   # s.autorequire = "rsql" 
