@@ -1,7 +1,7 @@
 SPEC = Gem::Specification.new do |s| 
   # identify the gem
   s.name = "rsql" 
-  s.version = "0.9.5" 
+  s.version = "0.9.6" 
   s.author = "S. Brent Faulkner" 
   s.email = "brentf@unwwwired.net" 
   s.homepage = "http://www.unwwwired.net" 
