@@ -1,5 +1,6 @@
-# extend ruby-odbc for printing result sets
+require 'fastercsv'
 
+# extend ruby-odbc for printing result sets
 module ODBC
   
   class Column
@@ -85,11 +86,10 @@ module ODBC
         puts rule
       when 'csv'
         # output header
-        puts displayed_columns.collect { |c| c.alias.inspect }.join(",")
+        puts displayed_columns.collect { |c| c.alias }.to_csv(:force_quotes => true)
         # output each row
         resultset.each do |r|
-          # TODO: use FasterCSV to emit the data, since this does escape the text, but not in a manner that can be consumed by FasterCSV
-          puts displayed_columns.collect { |c| r[c.index].to_s.inspect }.join(",")
+          puts displayed_columns.collect { |c| r[c.index].to_s }.to_csv(:force_quotes => true)
         end unless resultset.nil?
       end
     end
