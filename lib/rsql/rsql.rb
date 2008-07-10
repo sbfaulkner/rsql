@@ -106,6 +106,7 @@ module RSQL
       puts "DESCRIBE table"
       puts "HELP"
       puts "QUIT"
+      puts "ROLLBACK"
       puts "SET AUTOCOMMIT=value"
       puts "SHOW TABLES [LIKE pattern]"
       puts "USE dsn"
@@ -115,6 +116,19 @@ module RSQL
       exit
     end
   
+    def rollback
+      unless @database.nil?
+        begin
+          @database.rollback
+        rescue
+          puts "ERROR: Rollback failed"
+          raise
+        end
+      else
+        puts "No dsn selected"
+      end
+    end
+    
     def set(expression)
       unless @database.nil?
         matches = /([a-z]*)=(.*)/.match(expression)
@@ -253,7 +267,7 @@ module RSQL
   # quiet-mode wins over verbose-mode
   OPTIONS.delete :verbose if OPTIONS[:quiet]
 
-  puts "#{COMMAND} v0.9.7 - Copyright (c) 2007-2008 unwwwired.net" unless OPTIONS[:quiet]
+  puts "#{COMMAND} v0.9.8 - Copyright (c) 2007-2008 unwwwired.net" unless OPTIONS[:quiet]
 
   begin
     # use dsn if provided
