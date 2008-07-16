@@ -38,7 +38,6 @@ module ODBC
     end
     
     def print(aliases = nil)
-
       # get the column names, etc.
       displayed_columns = columns(true)
 
@@ -58,6 +57,8 @@ module ODBC
       # TODO: handle huge result sets better... maybe paginate or base column width on initial n-record set
       resultset = fetch_all
 
+      return 0 if resultset.nil? || resultset.empty?
+      
       case self.class.mode
       when 'column'
         # determine the column widths (might be realy slow with large result sets)
@@ -68,7 +69,7 @@ module ODBC
               c.width = value.length if value.length > c.width
             end
           end
-        end unless resultset.nil?
+        end
 
         # prepare the horizontal rule for header and footer
         rule = "+-" + displayed_columns.collect { |c| '-' * c.width }.join("-+-") + "-+"
@@ -80,7 +81,7 @@ module ODBC
         # output each row
         resultset.each do |r|
           puts "| " + displayed_columns.collect { |c| r[c.index].to_s.ljust(c.width, ' ') }.join(" | ") + " |"
-        end unless resultset.nil?
+        end
 
         # output footer
         puts rule
@@ -90,8 +91,10 @@ module ODBC
         # output each row
         resultset.each do |r|
           puts displayed_columns.collect { |c| r[c.index].to_s }.to_csv(:force_quotes => true)
-        end unless resultset.nil?
+        end
       end
+      
+      return resultset.size
     end
   end
   

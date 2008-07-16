@@ -47,7 +47,18 @@ module RSQL
         begin
           @database.run(command) do |result|
             begin
-              result.print
+              if result.ncols > 0
+                case nrows = result.print
+                when 0
+                  puts "Empty set" unless OPTIONS[:quiet]
+                when 1
+                  puts "1 row in set" unless OPTIONS[:quiet]
+                else
+                  puts "#{nrows} rows in set" unless OPTIONS[:quiet]
+                end
+              else
+                puts "#{result.nrows} #{result.nrows == 1 ? 'row' : 'rows'} affected" unless OPTIONS[:quiet]
+              end
             rescue
               raise
             ensure
@@ -267,7 +278,7 @@ module RSQL
   # quiet-mode wins over verbose-mode
   OPTIONS.delete :verbose if OPTIONS[:quiet]
 
-  puts "#{COMMAND} v0.9.8 - Copyright (c) 2007-2008 unwwwired.net" unless OPTIONS[:quiet]
+  puts "#{COMMAND} v0.9.9 - Copyright (c) 2007-2008 unwwwired.net" unless OPTIONS[:quiet]
 
   begin
     # use dsn if provided
