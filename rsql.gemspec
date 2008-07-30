@@ -8,7 +8,7 @@ SPEC = Gem::Specification.new do |s|
   # platform of choice
   s.platform = Gem::Platform::RUBY 
   # description of gem
-  s.summary = "A ruby implementation of an interactive SQL command-line for ODBC" 
+  s.summary = "A ruby implementation of an interactive SQL command-line for ODBC data sources" 
   s.files = %w(bin/rsql lib/rsql/odbc.rb lib/rsql/rsql.rb MIT-LICENSE Rakefile README rsql.gemspec)
   s.require_path = "lib" 
   # s.autorequire = "rsql" 
