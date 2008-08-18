@@ -22,4 +22,5 @@ Install the gem(s):
 ## Legal
 
 Author: S. Brent Faulkner <brentf@unwwwired.net>
+
 License: Copyright (c) 2008 unwwwired.net, released under the MIT license
