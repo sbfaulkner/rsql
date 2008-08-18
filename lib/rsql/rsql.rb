@@ -278,7 +278,7 @@ module RSQL
   # quiet-mode wins over verbose-mode
   OPTIONS.delete :verbose if OPTIONS[:quiet]
 
-  puts "#{COMMAND} v1.0.3 - Copyright (c) 2007-2008 unwwwired.net" unless OPTIONS[:quiet]
+  puts "#{COMMAND} v1.0.4 - Copyright (c) 2007-2008 unwwwired.net" unless OPTIONS[:quiet]
 
   begin
     # use dsn if provided
