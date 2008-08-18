@@ -1,9 +1,9 @@
-= rsql
+# rsql
 
 Command-line access to ODBC datasources.
 
 
-== Installation
+## Installation
 
 Run the following if you haven't already:
 
@@ -13,13 +13,13 @@ Install the gem(s):
 
   $ sudo gem install -r sbfaulkner-rsql
 
-== Example
+## Example
 
   $ rsql mydsn -u user -p password
 
   $ rsql mydsn -u user -p password -e 'select * from table'
 
-== Legal
+## Legal
 
-Author:: S. Brent Faulkner <brentf@unwwwired.net>
-License:: Copyright (c) 2008 unwwwired.net, released under the MIT license
+Author: S. Brent Faulkner <brentf@unwwwired.net>
+License: Copyright (c) 2008 unwwwired.net, released under the MIT license

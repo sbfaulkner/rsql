@@ -1,7 +1,7 @@
 SPEC = Gem::Specification.new do |s| 
   # identify the gem
   s.name = "rsql" 
-  s.version = "1.0.1" 
+  s.version = "1.0.2" 
   s.author = "S. Brent Faulkner" 
   s.email = "brentf@unwwwired.net" 
   s.homepage = "http://www.unwwwired.net" 
@@ -14,7 +14,7 @@ SPEC = Gem::Specification.new do |s|
   # s.autorequire = "rsql" 
   # s.test_file = "test/rsql.rb" 
   s.has_rdoc = true 
-  s.extra_rdoc_files = ["README.rdoc"] 
+  s.extra_rdoc_files = ["README.markdown"] 
   s.add_dependency("fastercsv", ">= 1.2.3") 
   s.executables = ["rsql"]
 end 
